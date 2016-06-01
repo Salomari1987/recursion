@@ -8,3 +8,7 @@ var getElementsByClassName = function(className
 ){
   // your code here
 };
+
+var x-men = function(x){
+	return x;
+}
