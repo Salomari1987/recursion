@@ -9,8 +9,8 @@ var getElementsByClassName = function(className,node){
 	if (node === undefined) {
 		node = document.body;
 	}
-	if (typeof node.classList === 'object'){
-		for (i=0; i<node.classList.length; i++){
+	if (typeof node.classList === 'object') {
+		for (var i = 0; i < node.classList.length; i++) {
 			if (node.classList[i]===className){
 				nodes.push(node);
 				break;
@@ -18,11 +18,7 @@ var getElementsByClassName = function(className,node){
 		}
 	}
 	for (var i = 0; i < node.childNodes.length ; i++){
-		if (typeof node.childNodes[i] === 'object'){
-			if (node.childNodes[i].childNodes.length > 0) {
-				getElementsByClassName (className, node.childNodes[i]);
-			}
-		}
+		nodes = nodes.concat(getElementsByClassName (className, node.childNodes[i]));
 	}
 
 return nodes;
